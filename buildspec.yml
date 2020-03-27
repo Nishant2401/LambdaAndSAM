@@ -23,7 +23,6 @@ artifacts:
     - outputSamTemplate.yaml
 
 
-
 # version: 0.2
 # phases:
 #   install:
