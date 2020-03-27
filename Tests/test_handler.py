@@ -1,15 +1,14 @@
 import unittest
-import lambda_function
-from LambdaCode import lambda_function.py
-#from LambdaCode import lambda_function as lambdafunc
+#import lambda_function
+from LambdaCode import lambda_function as lambdafunc
 
 class TestHandlerCase(unittest.TestCase):
 
     def test_response(self):
         print("testing response.")
         event={'Country':'USA'}
-        result = lambda_function.lambda_handler(event, None)
-        #result = lambdafunc.lambda_handler(event, None)
+        #result = lambda_function.lambda_handler(event, None)
+        result = lambdafunc.lambda_handler(event, None)
         print(result)
         self.assertEqual(result['statusCode'], 200)
         self.assertEqual(result['headers']['Content-Type'], 'application/json')
