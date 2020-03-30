@@ -11,7 +11,8 @@ def lambda_handler(event, context):
     return {'statusCode': 200,
             'body': json.dumps(data),
             'headers': {'Content-Type': 'application/json'}}
-
+            
+# A change that cannot be covered by current tests
 # import boto3
 # import json
 
