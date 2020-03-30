@@ -4,7 +4,7 @@ phases:
     runtime-versions:
       python: 3.8
 
-  pre-build:
+  pre_build:
     commands:
       - apt-get -qq update
       - echo $HOME
