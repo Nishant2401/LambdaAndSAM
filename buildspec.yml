@@ -3,21 +3,27 @@ phases:
   install:
     runtime-versions:
       python: 3.8
+
+  pre-build:
     commands:
-      - apt-get -qq  update
-      - pip3 install aws-sam-cli -qq
-      - pip3 install awscli -qq
-      - pip3 install pytest -qq
-      - pip3 install pytest-cov -qq
-      - sam --version
-      - aws cloudformation package --template-file samTemplate.yml --s3-bucket infratests3 --output-template-file outputSamTemplate.yaml
-      - python --version
-      - python3 --version
-      - python3 -B -m pytest -v Tests/ --cov=.
+      - apt-get -qq update
       - echo $HOME
       - which python
       - which python3
+      - python --version
+      - python3 --version 
+
+  build:
+    commands:
+      - pip3 install aws-sam-cli -qq
+      - sam --version 
+      - pip3 install awscli -qq
+      - pip3 install pytest -qq
+      - pip3 install pytest-cov -qq
+      - aws cloudformation package --template-file samTemplate.yml --s3-bucket infratests3 --output-template-file outputSamTemplate.yaml
+      - python3 -B -m pytest -v Tests/ --cov=.
       - python -m unittest Tests/test_handler.py
+
 artifacts:
   type: zip
   files:
