@@ -23,27 +23,3 @@ class TestHandlerCase(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-
-
-
-# import unittest
-# from cool_function import app as ct
-# from hot_function import app as ht
-# from snow_function import app as st
-
-# class TestHandlerCase(unittest.TestCase):
-#     def test_cooltest(self):
-#         result =  ct.lambda_handler('', '')
-#         self.assertEqual(result['statusCode'], 200)
-#         self.assertEqual(result["body"],'this is cool test')
-#         result1 =  ct.code()
-#         self.assertEqual(result1, true)
-#     def test_hottest(self):
-#         result =  ht.lambda_handler('', '')
-#         self.assertEqual(result['statusCode'], 200)
-#         self.assertEqual(result["body"],'this is hot test')
-#     def test_snowtest(self):
-#         result =  st.lambda_handler('', '')
-#         self.assertEqual(result['statusCode'], 200)
-#         self.assertEqual(result["body"],'this is snow test')
