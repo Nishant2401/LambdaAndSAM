@@ -12,7 +12,7 @@ def lambda_handler(event, context):
             'body': json.dumps(data),
             'headers': {'Content-Type': 'application/json'}}
 
-# Running only pytest
+# Running both unittest and  pytest
 # import boto3
 # import json
 
